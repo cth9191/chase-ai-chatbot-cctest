@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chase AI Chatbot - Terminal Interface</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="matrix-bg">
+        <canvas id="matrix-canvas"></canvas>
+    </div>
+    
+    <div class="container">
+        <header class="terminal-header">
+            <div class="terminal-title">
+                <span class="prompt">chase@ai-system:~$</span>
+                <span class="cursor">█</span>
+            </div>
+            <h1 class="ai-title">CHASE AI CHATBOT</h1>
+            <div class="status-bar">
+                <span class="status-indicator online">ONLINE</span>
+                <span class="timestamp" id="timestamp"></span>
+            </div>
+        </header>
+
+        <main class="chat-container">
+            <div class="chat-window" id="chatWindow">
+                <div class="system-message">
+                    <span class="timestamp">[SYSTEM]</span>
+                    <span class="message">Chase AI Terminal v2.0 initialized...</span>
+                </div>
+                <div class="system-message">
+                    <span class="timestamp">[SYSTEM]</span>
+                    <span class="message">Neural network loaded. Establishing n8n connection...</span>
+                </div>
+            </div>
+            
+            <div class="input-container">
+                <div class="input-line">
+                    <span class="input-prompt">user@terminal:~$</span>
+                    <input type="text" id="messageInput" placeholder="Enter your query..." autocomplete="off">
+                    <button id="sendButton" class="send-btn">SEND</button>
+                </div>
+            </div>
+        </main>
+
+        <footer class="terminal-footer">
+            <div class="footer-info">
+                <span>Connection: Secure</span>
+                <span>Encryption: AES-256</span>
+                <span>Latency: <span id="latency">12ms</span></span>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

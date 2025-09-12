@@ -1,0 +1,20 @@
+# IDE and system files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Node.js (if we add any build tools later)
+node_modules/
+npm-debug.log*
+
+# Logs
+*.log
+
+# Local development
+.env
+.env.local
+
+# VS Code
+.vscode/

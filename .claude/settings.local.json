@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/Chase/OneDrive/Pictures/Screenshots/**)",
+      "Bash(npx:*)",
+      "Bash(python:*)",
+      "Bash(ngrok:*)",
+      "Bash(where choco)",
+      "Bash(choco install:*)",
+      "Bash(unzip:*)",
+      "Bash(curl:*)",
+      "Bash(git init:*)",
+      "Bash(git config:*)",
+      "Bash(gh:*)",
+      "Bash(git add:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
