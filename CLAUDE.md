@@ -21,7 +21,13 @@ python -m http.server 8000
 ### Deployment
 ```bash
 # Deploy to Vercel (automated pipeline configured)
-vercel --prod --token 7LICpLTiLbnZTmOy3QeWZ8PJ --yes
+# Option 1: Interactive login (browser-based)
+# vercel login
+# vercel --prod --yes
+
+# Option 2: Token-based (for automation) 
+# Store token in local environment variable or .vercel-token file
+# vercel --prod --token $(cat .vercel-token) --yes
 ```
 
 ### Version Control
