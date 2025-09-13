@@ -26,7 +26,7 @@
         </header>
 
         <main class="chat-container">
-            <div class="chat-window" id="chatWindow">
+            <div class="chat-window" id="chatWindow" role="log" aria-live="polite" aria-label="Chat messages">
                 <div class="system-message">
                     <span class="timestamp">[SYSTEM]</span>
                     <span class="message">Chase AI Terminal v2.0 initialized...</span>
@@ -39,9 +39,14 @@
             
             <div class="input-container">
                 <div class="input-line">
-                    <span class="input-prompt">user@terminal:~$</span>
-                    <input type="text" id="messageInput" placeholder="Enter your query..." autocomplete="off">
-                    <button id="sendButton" class="send-btn">SEND</button>
+                    <label for="messageInput" class="sr-only">Enter your message</label>
+                    <span class="input-prompt" aria-hidden="true">user@terminal:~$</span>
+                    <input type="text" id="messageInput" placeholder="Enter your query..." autocomplete="off" aria-describedby="send-help">
+                    <button id="sendButton" class="send-btn" type="button" aria-describedby="send-help">
+                        <span class="sr-only">Send message</span>
+                        SEND
+                    </button>
+                    <div id="send-help" class="sr-only">Press Enter or click Send to submit your message</div>
                 </div>
             </div>
         </main>
