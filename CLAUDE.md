@@ -62,7 +62,7 @@ git push origin main
 ### Integration Architecture
 
 **n8n Webhook Integration**:
-- **Current Webhook**: `https://n8n.srv910413.hstgr.cloud/webhook/41f5fc5b-9d20-4152-ac5e-4fb043ea2ee3`
+- **Webhook Configuration**: Stored in local `.webhook-url` file (not committed to git)
 - **Method**: GET requests with query parameters (`message`, `timestamp`, `user`)
 - **Response Formats Supported**: `{text: "..."}`, `{response: "..."}`, `{message: "..."}`, `{output: "..."}`, or plain string
 
@@ -98,8 +98,9 @@ git push origin main
 4. **Deployment**: Single command via Vercel CLI
 
 ### Webhook Configuration
-- Current webhook is hardcoded in `script.js` line 48
-- To change: Update `this.webhookUrl` in ChaseAIChatbot constructor
+- Create local `.webhook-url` file with your n8n webhook URL
+- File is automatically loaded by `loadWebhookUrl()` method
+- If no file exists, application runs in demo mode
 - Dynamic webhook setting available via `window.chatbot.setWebhook(url)` method
 
 ### Message Format Handling
@@ -123,8 +124,9 @@ The response parser in `sendToWebhook()` handles multiple n8n output formats:
 
 **Security**:
 - Uses GET requests to avoid CORS preflight issues
-- No sensitive data stored client-side
-- Webhook URL could be environment-ized if needed
+- Webhook URL stored in local `.webhook-url` file (not committed to git)
+- Vercel token stored in local `.vercel-token` file (not committed to git)
+- No sensitive data stored client-side or in public repository
 
 **Maintenance**:
 - Production code has console.log statements removed

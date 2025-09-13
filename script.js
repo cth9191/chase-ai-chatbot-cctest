@@ -81,13 +81,27 @@ class ChaseAIChatbot {
         this.chatWindow = document.getElementById('chatWindow');
         this.messageInput = document.getElementById('messageInput');
         this.sendButton = document.getElementById('sendButton');
-        // Configure n8n webhook URL automatically
-        this.webhookUrl = 'https://n8n.srv910413.hstgr.cloud/webhook/41f5fc5b-9d20-4152-ac5e-4fb043ea2ee3';
+        // Configure n8n webhook URL from local config
+        this.webhookUrl = null;
+        this.loadWebhookUrl();
         
         this.initEventListeners();
         this.updateTimestamp();
         this.simulateLatency();
         this.initializeConnection();
+    }
+    
+    async loadWebhookUrl() {
+        try {
+            const response = await fetch('.webhook-url');
+            if (response.ok) {
+                this.webhookUrl = (await response.text()).trim();
+            } else {
+                console.log('No webhook URL configured. Running in demo mode.');
+            }
+        } catch (error) {
+            console.log('Webhook URL not found. Running in demo mode.');
+        }
     }
     
     initEventListeners() {

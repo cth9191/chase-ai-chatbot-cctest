@@ -12,7 +12,16 @@
       "Bash(git init:*)",
       "Bash(git config:*)",
       "Bash(gh:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git remote add:*)",
+      "Bash(git branch:*)",
+      "Bash(git push:*)",
+      "Bash(npm install:*)",
+      "Bash(vercel:*)",
+      "WebFetch(domain:chase-ai-chatbot-cctest.vercel.app)",
+      "Bash(node:*)",
+      "WebSearch"
     ],
     "deny": [],
     "ask": []

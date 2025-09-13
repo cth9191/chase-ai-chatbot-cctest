@@ -16,6 +16,7 @@ npm-debug.log*
 .env
 .env.local
 .vercel-token
+.webhook-url
 
 # VS Code
 .vscode/
