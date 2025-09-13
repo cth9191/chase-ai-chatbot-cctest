@@ -1,0 +1,9 @@
+{
+  "name": "chase-ai-chatbot",
+  "version": "1.0.0",
+  "description": "Matrix-themed AI chatbot interface",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "buildCommand": "npm run build"
+}

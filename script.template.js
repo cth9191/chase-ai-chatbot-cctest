@@ -92,7 +92,7 @@ class ChaseAIChatbot {
     }
     
     async loadWebhookUrl() {
-        const configuredUrl = 'https://n8n.srv910413.hstgr.cloud/webhook/41f5fc5b-9d20-4152-ac5e-4fb043ea2ee3';
+        const configuredUrl = '__WEBHOOK_URL_PLACEHOLDER__';
         
         if (configuredUrl && configuredUrl !== 'DEMO_MODE' && configuredUrl !== '__WEBHOOK_URL_PLACEHOLDER__') {
             this.webhookUrl = configuredUrl;
